@@ -40,7 +40,7 @@ const productfile = multer({
 //CATEGORY
 routes.get('/',uploadFile, ApiController.FirstPage);
 routes.post('/creatcategory',uploadFile, ApiController.CreatCategory);
-routes.get('/categorydata', ApiController.ViewCategory);
+routes.get('/categorydata',passport.chekUser, ApiController.ViewCategory);
 routes.get('/editcategory', ApiController.EditCategory);
 routes.put('/updatecategory',uploadFile, ApiController.UpdateCategory);
 routes.delete('/deletecategory', ApiController.DeleteCategory);
